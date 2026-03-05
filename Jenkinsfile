@@ -7,6 +7,7 @@ pipeline {
         IMAGE_NAME = 'campusconnect'
         K8S_NAMESPACE = 'campusconnect-ns'
         DEPLOY_NAME = 'campusconnect-deployment'
+        TIMESTAMP = sh(script: "date +%Y%m%d%H%M%S", returnStdout: true).trim()
     }
 
     stages {
@@ -20,7 +21,6 @@ pipeline {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    sh 'echo ${BUILD_TIMESTAMP}'
                     sh 'docker login -u ${DOCKER_USER} -p ${DOCKERHUB_PASS}'
                     def img = docker.build(
                         "${DOCKER_USER}/${IMAGE_NAME}:${BUILD_TIMESTAMP}"
