@@ -43,9 +43,7 @@ pipeline {
                 }
             }
         }
-        }
-        }
-    } // This was the missing brace for the 'stages' block
+    }
 
     post {
         success {
