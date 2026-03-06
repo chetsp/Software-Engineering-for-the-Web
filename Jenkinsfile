@@ -32,18 +32,18 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Added KUBECONFIG export and full path to kubectl
+                    // Uses the newly installed kubectl and connects to the remote cluster
                     sh """
-                        export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
-                        /var/lib/rancher/rke2/bin/kubectl set image deployment/${DEPLOY_NAME} \
+                        kubectl set image deployment/${DEPLOY_NAME} \
                           campusconnect=${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP} \
-                          -n ${K8S_NAMESPACE}
+                          -n ${K8S_NAMESPACE} \
+                          --server=https://107.22.248.10:6443 --insecure-skip-tls-verify
                     """
                 }
             }
         }
-    }
-        
+    } // This was the missing brace for the 'stages' block
+
     post {
         success {
             echo 'Deployment successful!'
