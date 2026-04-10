@@ -1,7 +1,7 @@
-# SWE-645: Software Engineering for the Web
-## Assignment 2 – Docker, Kubernetes & CI/CD Pipeline
+# Software Engineering for the Web
+##Docker, Kubernetes & CI/CD Pipeline
 
-**Student:** Chetana Patel, Gnanitha Suryadevara
+**Developer:** Chetana Patel, Gnanitha Suryadevara
 
 **Application:** CampusConnect Student Survey  
 **Docker Hub:** [chetsp2613/campusconnect](https://hub.docker.com/r/chetsp2613/campusconnect)  
