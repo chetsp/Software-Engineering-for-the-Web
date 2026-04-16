@@ -1,4 +1,4 @@
-# Software Engineering for the Web
+# CampusConnect Student Survey
 ##Docker, Kubernetes & CI/CD Pipeline
 
 **Developer:** Chetana Patel, Gnanitha Suryadevara
